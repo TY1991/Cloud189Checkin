@@ -11,12 +11,12 @@
 | 变量名🐈             | 说明 📌                                                                 | 示例 🖼️                 |
 |----------------------|-----------------------------------------------------------------------|-------------------------|
 | `TY_ACCOUNTS`        | 账号密码组合，格式：`[{"userName":"账号","password":"密码"},...]`      | `[{"userName":"u1","password":"p1"},{"userName":"u2","password":"p2"}]` |
-| `EXEC_THRESHOLD`     | 个人云和家庭云签到线程数（不填就行，默认主号签到一次，小号签到10次）                                       | `10`                    |
+| `EXEC_THRESHOLD`     | 个人云和家庭云签到线程数（不填或者默认1就行，默认主号签到一次，小号签到10次）                                       | `1`                    |
 | `FAMILYID`           | 家庭云ID抓取教程：[Alist文档](https://alist.nn.ci/zh/guide/drivers/189.html#%E5%AE%B6%E5%BA%AD%E8%BD%AC%E7%A7%BB)  | `123456`                |
 | `WX_PUSHER_UID`      | 微信推送UID（扫码获取）[二维码](https://wxpusher.zjiecode.com/api/qrcode/4Ix7noqD3L7DMBoSlvig3t4hqjFWzPkdHqAYsg8IzkPreW7d8uGUHi9LJO4EcyJg.jpg) | `UID_123`               |
 
 ---
-**如果EXEC_THRESHOLD不设置。或者设置为1。就主号签到一次个人跟家庭。其他号签到家庭。不签到个人。如果EXEC_THRESHOLD设置其他数字。所有号个人签到EXEC_THRESHOLD次数。家庭签到EXEC_THRESHOLD次数。TY_ACCOUNTS账密。跟群主格式一致FAMILYID家庭IDEXEC_THRESHOLD线程。不设置默认保号模式PUSH_PLUS_TOKEN推送
+**如果EXEC_THRESHOLD不设置。或者设置为1。就主号签到一次个人跟家庭。其他号签到10次家庭。不签到个人。如果EXEC_THRESHOLD设置其他数字。所有号个人签到EXEC_THRESHOLD次数。家庭签到EXEC_THRESHOLD次数。TY_ACCOUNTS账密。跟群主格式一致FAMILYID家庭IDEXEC_THRESHOLD线程。不设置默认保号模式PUSH_PLUS_TOKEN推送
 ### 🚀 快速执行指南  
 1️⃣ **启用Workflow**  
   ✅ 点击仓库顶部 `操作` → **`I understand my workflows, go ahead 和 enable them`**  
@@ -148,7 +148,10 @@ ql repo https://github.com/Aijiaobin/Cloud189Checkin.git "src|.env" "image" "src
 
 ## PushMe 通知
 - **PUSHME_KEY**：PushMe 的 KEY
-
+## WXPUSHER通知
+- **WXPUSHER_APP_TOKEN:** '', // wxpusher 的 appToken
+- **WXPUSHER_TOPIC_IDS: **'', // wxpusher 的 主题ID，多个用英文分号;分隔 topic_ids 与 uids 至少配置一个才行**
+- **WXPUSHER_UIDS: **'', // wxpusher 的 用户ID，多个用英文分号;分隔 topic_ids 与 uids 至少配置一个才行
 
 ## 🙏 **特别鸣谢**  
 - 原项目：[wes-lin/Cloud189Checkin](https://github.com/wes-lin/Cloud189Checkin)  
