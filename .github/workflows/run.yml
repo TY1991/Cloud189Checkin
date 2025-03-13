@@ -11,9 +11,9 @@ on:
     - cron: '00 18,1 * * *'
 jobs:
     build-and-deploy-15876:
-    runs-on: ubuntu-latest
-    environment: 15876
-    steps:
+      runs-on: ubuntu-latest
+      environment: 15876
+      steps:
       - uses: actions/checkout@main
 
       - name: Setup Node.js environment
@@ -59,9 +59,9 @@ jobs:
 
 
     build-and-deploy-133364:
-     runs-on: ubuntu-latest
-     environment: 133364
-     steps:
+      runs-on: ubuntu-latest
+      environment: 133364
+      steps:
       - uses: actions/checkout@main
 
       - name: Setup Node.js environment
